@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Мастер шин — круглосуточный шиномонтаж в Астане</title>
+<meta name="description" content="Мастер шин — шиномонтажная мастерская в Астане, район Сарыарка. Шиномонтаж, ремонт шин, боковой порез, аргонная сварка дисков и прокат дисков. Круглосуточно. +7 775 676-78-70">
+<meta name="theme-color" content="#0a0b0d">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Мастер шин — круглосуточный шиномонтаж в Астане">
+<meta property="og:description" content="Шиномонтаж, ремонт шин, боковой порез, аргонная сварка и прокат дисков. Переулок Жоламан, 9/8. Работаем 24/7.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%230a0b0d' stroke='%23ffb81c' stroke-width='6'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ffb81c'/%3E%3Cpath d='M32 10v14M32 40v14M10 32h14M40 32h14' stroke='%23ffb81c' stroke-width='4'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+<script type="importmap">
+{ "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TireShop",
+  "name": "Мастер шин",
+  "description": "Шиномонтаж, ремонт шин, боковой порез, аргонная сварка дисков, прокат дисков.",
+  "telephone": "+77756767870",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Переулок Жоламан, 9/8",
+    "addressLocality": "Астана",
+    "addressRegion": "Сарыарка",
+    "addressCountry": "KZ"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 51.172517, "longitude": 71.375835 },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "hasMap": "https://2gis.kz/astana/firm/70000001029075916"
+}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#hero">Перейти к содержимому</a>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__wheel"></div>
+  <span>Мастер шин</span>
+</div>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- 3D layer -->
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div class="tags" aria-hidden="true">
+  <div class="tag" data-tag="tire"><i></i><b>Шина</b><small>протектор и боковина</small></div>
+  <div class="tag" data-tag="rim"><i></i><b>Диск</b><small>литой, 10 спиц</small></div>
+  <div class="tag" data-tag="brake"><i></i><b>Тормозной диск</b><small>с суппортом</small></div>
+</div>
+
+<!-- Header -->
+<header class="nav" id="nav">
+  <a class="brand" href="#hero" aria-label="Мастер шин — на главную">
+    <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+      <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="6"/>
+      <circle cx="32" cy="32" r="6" fill="currentColor"/>
+      <path d="M32 10v14M32 40v14M10 32h14M40 32h14" stroke="currentColor" stroke-width="4"/>
+    </svg>
+    <span>Мастер<b>шин</b></span>
+  </a>
+  <nav class="nav__links" id="menu" aria-label="Основное меню">
+    <a href="#services">Услуги</a>
+    <a href="#why">Почему мы</a>
+    <a href="#process">Как работаем</a>
+    <a href="#prices">Цены</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a class="nav__phone" href="tel:+77756767870">
+    <span class="live" aria-hidden="true"></span>
+    <span>+7 775 676-78-70</span>
+  </a>
+  <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</header>
+
+<!-- Section rail -->
+<ul class="rail" id="rail" aria-hidden="true">
+  <li><a href="#hero" data-label="Главная"></a></li>
+  <li><a href="#services" data-label="Услуги"></a></li>
+  <li><a href="#why" data-label="Почему мы"></a></li>
+  <li><a href="#process" data-label="Как работаем"></a></li>
+  <li><a href="#prices" data-label="Цены"></a></li>
+  <li><a href="#reviews" data-label="Отзывы"></a></li>
+  <li><a href="#contacts" data-label="Контакты"></a></li>
+</ul>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow reveal"><span class="live"></span>Шиномонтажная мастерская · Астана, Сарыарка</p>
+        <h1 class="reveal" style="--d:.08s">Шиномонтаж<br>в Астане&nbsp;— <em>круглосуточно</em></h1>
+        <p class="lead reveal" style="--d:.16s">Монтаж и ремонт шин, боковой порез, аргонная сварка и прокат дисков.<span class="hide-m"> Работаем днём и ночью, без выходных&nbsp;— заезжайте, когда удобно.</span></p>
+        <div class="cta reveal" style="--d:.24s">
+          <a class="btn btn--primary" href="tel:+77756767870">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Позвонить
+          </a>
+          <a class="btn btn--ghost" href="#contacts">Как добраться
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <dl class="stats reveal" style="--d:.32s">
+          <div><dt><span data-count="4.7" data-dec="1">4.7</span><sup>★</sup></dt><dd>рейтинг на 2ГИС</dd></div>
+          <div><dt>24/7</dt><dd>без выходных</dd></div>
+          <div><dt><span data-count="445">445</span></dt><dd>отзывов водителей</dd></div>
+        </dl>
+      </div>
+
+      <!-- Fallback when WebGL / CDN is unavailable -->
+      <div class="hero__fallback" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+          <circle cx="200" cy="200" r="180" fill="#121316" stroke="#1e2024" stroke-width="2"/>
+          <circle cx="200" cy="200" r="150" fill="none" stroke="#2a2c31" stroke-width="22" stroke-dasharray="6 8"/>
+          <circle cx="200" cy="200" r="118" fill="#9aa0a8"/>
+          <circle cx="200" cy="200" r="104" fill="#15171a"/>
+          <g stroke="#c4c8ce" stroke-width="14" stroke-linecap="round">
+            <path d="M200 200V108M200 200l87-28M200 200l54 75M200 200l-54 75M200 200l-87-28"/>
+          </g>
+          <circle cx="200" cy="200" r="30" fill="#ffb81c"/>
+        </svg>
+      </div>
+    </div>
+    <a class="scroll-hint" href="#services" aria-label="Прокрутите вниз">
+      <span class="scroll-hint__mouse"><i></i></span>
+      <span>Листайте — колесо вращается вместе с вами</span>
+    </a>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap" aria-hidden="true"><div class="marquee">
+    <div class="marquee__track">
+      <span>Шиномонтаж</span><span>Прокат дисков</span><span>Ремонт шин</span><span>Аргонная сварка</span><span>Боковой порез</span><span>Круглосуточно</span>
+      <span>Шиномонтаж</span><span>Прокат дисков</span><span>Ремонт шин</span><span>Аргонная сварка</span><span>Боковой порез</span><span>Круглосуточно</span>
+    </div>
+  </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="eyebrow">Услуги</p>
+        <h2>Всё для ваших колёс&nbsp;— <em>в одном месте</em></h2>
+        <p class="lead">Пять услуг под одной крышей. Листайте вниз — колесо покажет, как мы с ним работаем.</p>
+      </header>
+    </div>
+
+    <article class="step" id="step1">
+      <div class="wrap">
+        <div class="step__body panel reveal">
+          <span class="step__num">01 / 05</span>
+          <h3>Шиномонтаж</h3>
+          <p class="step__tag">Снимем, заменим, поставим</p>
+          <p>Демонтаж и монтаж шин на диски, установка колёс на автомобиль, сезонная смена резины. Работаем круглосуточно&nbsp;— приезжайте, когда вам удобно.</p>
+          <ul class="chips"><li>Замена шин</li><li>Сезонная смена</li><li>Монтаж на диски</li></ul>
+          <a class="link" href="tel:+77756767870">Уточнить стоимость <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="step step--right" id="step2">
+      <div class="wrap">
+        <div class="step__body panel reveal">
+          <span class="step__num">02 / 05</span>
+          <h3>Ремонт шин</h3>
+          <p class="step__tag">Прокол&nbsp;— не приговор</p>
+          <p>Находим повреждение, устраняем прокол и проверяем герметичность. Помогаем сохранить шину и быстро вернуться на дорогу.</p>
+          <ul class="chips"><li>Прокол</li><li>Поиск повреждения</li><li>Проверка после ремонта</li></ul>
+          <a class="link" href="tel:+77756767870">Уточнить стоимость <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="step" id="step3">
+      <div class="wrap">
+        <div class="step__body panel reveal">
+          <span class="step__num">03 / 05</span>
+          <h3>Боковой порез</h3>
+          <p class="step__tag">Порез на боковине? Покажите нам</p>
+          <p>Боковина&nbsp;— самая нагруженная часть шины. Оценим повреждение и скажем честно: можно восстановить или безопаснее заменить.</p>
+          <ul class="chips"><li>Оценка повреждения</li><li>Восстановление</li><li>Честный вердикт</li></ul>
+          <a class="link" href="tel:+77756767870">Уточнить стоимость <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="step step--right" id="step4">
+      <div class="wrap">
+        <div class="step__body panel reveal">
+          <span class="step__num">04 / 05</span>
+          <h3>Аргонная сварка</h3>
+          <p class="step__tag">Заварим трещину на диске</p>
+          <p>Восстанавливаем литые диски аргонной сваркой: трещины, сколы кромки, повреждения после ямы на дороге.</p>
+          <ul class="chips"><li>Литые диски</li><li>Трещины</li><li>Сколы кромки</li></ul>
+          <a class="link" href="tel:+77756767870">Уточнить стоимость <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="step" id="step5">
+      <div class="wrap">
+        <div class="step__body panel reveal">
+          <span class="step__num">05 / 05</span>
+          <h3>Прокат дисков</h3>
+          <p class="step__tag">Диски на время</p>
+          <p>Пока ремонтируется ваш комплект, не стоит ездить на повреждённых дисках. Подберём диски из проката под ваш автомобиль.</p>
+          <ul class="chips"><li>Комплект на время</li><li>Подбор по размеру</li></ul>
+          <a class="link" href="tel:+77756767870">Уточнить наличие <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- WHY -->
+  <section class="block" id="why">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="eyebrow">Почему мы</p>
+        <h2>Колесо не ждёт.<br><em>Мы&nbsp;— тоже.</em></h2>
+      </header>
+      <div class="cards">
+        <div class="card panel reveal">
+          <b class="card__big">24/7</b>
+          <h3>Круглосуточно</h3>
+          <p>Прокол ночью или в выходной&nbsp;— мы на месте, работаем без перерывов и выходных.</p>
+        </div>
+        <div class="card panel reveal" style="--d:.08s">
+          <b class="card__big">4.7</b>
+          <h3>Рейтинг на 2ГИС</h3>
+          <p>445 отзывов и 569 оценок от водителей. Мастерская — номинант 2ГИС 2026.</p>
+        </div>
+        <div class="card panel reveal" style="--d:.16s">
+          <b class="card__big">5</b>
+          <h3>Услуг в одном месте</h3>
+          <p>Шиномонтаж, ремонт, боковой порез, сварка и прокат дисков&nbsp;— не нужно ездить по разным адресам.</p>
+        </div>
+        <div class="card panel reveal" style="--d:.24s">
+          <b class="card__big">19</b>
+          <h3>Филиалов в сети</h3>
+          <p>«Мастер шин»&nbsp;— сеть мастерских. Ближайшую точку найдёте в 2ГИС.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="block process" id="process">
+    <div class="wrap process__grid">
+      <div class="process__spacer" aria-hidden="true"></div>
+      <div class="process__col">
+        <header class="sec-head reveal">
+          <p class="eyebrow">Как работаем</p>
+          <h2>Четыре шага&nbsp;— <em>и вы в пути</em></h2>
+        </header>
+        <ol class="timeline" id="timeline">
+          <li class="reveal">
+            <span class="timeline__n">1</span>
+            <div><h3>Звонок или визит</h3><p>Позвоните заранее или просто заезжайте&nbsp;— мастерская открыта круглосуточно.</p></div>
+          </li>
+          <li class="reveal">
+            <span class="timeline__n">2</span>
+            <div><h3>Осмотр</h3><p>Осматриваем колесо, называем причину проблемы и стоимость работ.</p></div>
+          </li>
+          <li class="reveal">
+            <span class="timeline__n">3</span>
+            <div><h3>Работа</h3><p>Выполняем монтаж, ремонт или сварку с вашего согласия.</p></div>
+          </li>
+          <li class="reveal">
+            <span class="timeline__n">4</span>
+            <div><h3>Проверка</h3><p>Проверяем результат перед тем, как вернуть вам колесо.</p></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section class="block" id="prices">
+    <div class="wrap prices__grid">
+      <div class="prices__col">
+        <header class="sec-head reveal">
+          <p class="eyebrow">Цены</p>
+          <h2>Стоимость&nbsp;— <em>по запросу</em></h2>
+          <p class="lead">Цена зависит от радиуса и типа колеса, состояния шины и объёма работ. Позвоните&nbsp;— подскажем стоимость до приезда.</p>
+        </header>
+        <ul class="pricelist panel reveal">
+          <li><a href="tel:+77756767870"><span>Шиномонтаж</span><em>уточнить</em></a></li>
+          <li><a href="tel:+77756767870"><span>Ремонт шин</span><em>уточнить</em></a></li>
+          <li><a href="tel:+77756767870"><span>Боковой порез</span><em>уточнить</em></a></li>
+          <li><a href="tel:+77756767870"><span>Аргонная сварка</span><em>уточнить</em></a></li>
+          <li><a href="tel:+77756767870"><span>Прокат дисков</span><em>уточнить</em></a></li>
+        </ul>
+        <p class="note reveal">Актуальный прайс-лист — во вкладке «Цены» в 2ГИС.</p>
+        <a class="btn btn--ghost reveal" href="https://2gis.kz/astana/firm/70000001029075916/tab/prices" target="_blank" rel="noopener">Открыть цены в 2ГИС ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="block reviews" id="reviews">
+    <div class="wrap">
+      <div class="rating panel reveal">
+        <div class="rating__score">
+          <b>4.7</b>
+          <div class="stars" role="img" aria-label="Рейтинг 4,7 из 5" style="--fill:94%"><span>★★★★★</span></div>
+          <small>из 5 на 2ГИС</small>
+        </div>
+        <div class="rating__text">
+          <span class="badge">Номинант 2ГИС 2026</span>
+          <h2>Нам доверяют водители Астаны</h2>
+          <p>445 отзывов и 569 оценок. Читайте, что пишут те, кто уже был у нас, — и решайте сами.</p>
+          <a class="btn btn--primary" href="https://2gis.kz/astana/firm/70000001029075916/tab/reviews" target="_blank" rel="noopener">Читать отзывы в 2ГИС ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="block contacts" id="contacts">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="eyebrow">Контакты</p>
+        <h2>Заезжайте <em>в любое время</em></h2>
+      </header>
+      <div class="contacts__grid">
+        <div class="contacts__info panel reveal">
+          <ul class="facts">
+            <li>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              <div><small>Адрес</small><b>Астана, Сарыарка, переулок Жоламан, 9/8</b><span>1 этаж</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <div><small>Режим работы</small><b>Круглосуточно</b><span>7 дней в неделю</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+              <div><small>Телефон</small><b><a href="tel:+77756767870">+7 775 676-78-70</a></b><span>звонок или WhatsApp</span></div>
+            </li>
+          </ul>
+          <div class="cta">
+            <a class="btn btn--primary" href="tel:+77756767870">Позвонить</a>
+            <a class="btn btn--ghost" href="https://wa.me/77756767870" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn--ghost" href="https://2gis.kz/astana/firm/70000001029075916" target="_blank" rel="noopener">Маршрут в 2ГИС ↗</a>
+          </div>
+        </div>
+        <div class="map reveal" style="--d:.1s">
+          <iframe title="Карта: Мастер шин, переулок Жоламан, 9/8, Астана" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=71.3638%2C51.1665%2C71.3878%2C51.1785&amp;layer=mapnik&amp;marker=51.172517%2C71.375835"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__row">
+    <a class="brand" href="#hero" aria-label="Наверх">
+      <svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="32" cy="32" r="6" fill="currentColor"/><path d="M32 10v14M32 40v14M10 32h14M40 32h14" stroke="currentColor" stroke-width="4"/></svg>
+      <span>Мастер<b>шин</b></span>
+    </a>
+    <p>Шиномонтажная мастерская · Переулок Жоламан, 9/8, Астана · Круглосуточно</p>
+    <p>© 2026 Мастер шин</p>
+  </div>
+</footer>
+
+<a class="fab" href="tel:+77756767870" aria-label="Позвонить в Мастер шин">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+  Позвонить
+</a>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
+
+
